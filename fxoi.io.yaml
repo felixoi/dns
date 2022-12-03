@@ -10,3 +10,15 @@
       preference: 10
   - type: SPF
     value: v=spf1 include:spf.mailcow.de ~all
+  - type: TXT
+    values:
+      - v=spf1 include:spf.mailcow.de ~all
+
+_dmarc:
+  type: TXT
+  value: >-
+    v=DMARC1\;
+    p=reject\;
+    pct=100\;
+    rua=mailto:dmarc@fxoi.io\;
+    ri=604800\;
