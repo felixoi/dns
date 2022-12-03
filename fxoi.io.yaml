@@ -1,7 +1,49 @@
 "":
-  octodns:
-    cloudflare:
-      proxied: true
-  ttl: 1
+  - type: ALIAS
+    octodns:
+     cloudflare:
+       proxied: true
+    value: felixoi.com.
+  - type: MX
+    value:
+      exchange: hosted.mailcow.de.
+      preference: 10
+  - type: SPF
+    value: v=spf1 include:spf.mailcow.de ~all
+  - type: TXT
+    values:
+      - mailcow
+      - v=spf1 include:spf.mailcow.de ~all
+
+_dmarc:
+  type: TXT
+  value: >-
+    v=DMARC1\;
+    p=reject\;
+    pct=100\;
+    rua=mailto:dmarc@fxoi.io\;
+    ri=604800\;
+
+_autodiscover._tcp:
+  type: SRV
+  value:
+    priority: 10
+    weight: 10
+    port: 443
+    target: autodiscover.mailcow.de.
+
+_autoconfig._tcp:
+  type: SRV
+  value:
+    priority: 10
+    weight: 10
+    port: 443
+    target: autoconfig.mailcow.de.
+
+autodiscover:
   type: CNAME
-  value: felixoi.com.
+  value: autodiscover.mailcow.de.
+
+autoconfig:
+  type: CNAME
+  value: autoconfig.mailcow.de.

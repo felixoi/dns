@@ -8,9 +8,11 @@ providers:
     class: octodns.provider.yaml.YamlProvider
     directory: ./
     enforce_order: False
+    default_ttl: 300
   cloudflare:
     class: octodns.provider.cloudflare.CloudflareProvider
     token: env/CLOUDFLARE_TOKEN
+    strict_supports: true
 
 zones:
   fxoi.io.:
