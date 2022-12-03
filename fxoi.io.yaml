@@ -30,7 +30,7 @@ _autodiscover._tcp:
     priority: 10
     weight: 10
     port: 443
-    target: autodiscover.mailcow.de
+    target: autodiscover.mailcow.de.
 
 _autoconfig._tcp:
   type: SRV
@@ -38,12 +38,12 @@ _autoconfig._tcp:
     priority: 10
     weight: 10
     port: 443
-    target: autoconfig.mailcow.de
+    target: autoconfig.mailcow.de.
 
 autodiscover:
   type: CNAME
-  value: autodiscover.mailcow.de
+  value: autodiscover.mailcow.de.
 
 autoconfig:
   type: CNAME
-  value: autoconfig.mailcow.de
+  value: autoconfig.mailcow.de.
