@@ -1,9 +1,4 @@
 "":
-  - type: ALIAS
-    octodns:
-     cloudflare:
-       proxied: true
-    value: felixoi.com.
   - type: MX
     value:
       exchange: hosted.mailcow.de.
