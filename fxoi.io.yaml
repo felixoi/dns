@@ -41,13 +41,13 @@ _autoconfig._tcp:
 autodiscover:
   octodns:
     cloudflare:
-      proxied: true
+      proxied: false
   type: CNAME
   value: autodiscover.mailcow.de.
 
 autoconfig:
   octodns:
     cloudflare:
-      proxied: true
+      proxied: false
   type: CNAME
   value: autoconfig.mailcow.de.
