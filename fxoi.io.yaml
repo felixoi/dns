@@ -3,5 +3,5 @@
     cloudflare:
       proxied: true
   ttl: 1
-  type: CNAME
+  type: ALIAS
   value: felixoi.com.
