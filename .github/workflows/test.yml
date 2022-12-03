@@ -20,7 +20,8 @@ jobs:
           python-version: '3'
       - name: Install requirements
         run: pip install -r requirements.txt
-      - uses: solvaholic/octodns-sync@main
+      - uses: solvaholic/octodns-sync@v3
+        id: generate-plan
         with:
           config_path: config/production.yaml
         env:
