@@ -12,6 +12,12 @@
     values:
       - mailcow
       - v=spf1 include:spf.mailcow.de ~all
+"*":
+  - type: URLFWD
+    value:
+      path: /*
+      url: https://felixoi.com
+      status_code: 302
 
 _dmarc:
   type: TXT
