@@ -16,8 +16,10 @@
   - type: URLFWD
     value:
       path: /*
-      url: https://felixoi.com
-      status_code: 302
+      target: https://felixoi.com
+      code: 302
+      masking: 2
+      query: 0
 
 _dmarc:
   type: TXT
