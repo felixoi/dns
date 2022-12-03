@@ -1,0 +1,20 @@
+manager:
+  plan_outputs:
+    html:
+      class: octodns.provider.plan.PlanHtml
+
+providers:
+  config:
+    class: octodns.provider.yaml.YamlProvider
+    directory: ./
+    enforce_order: False
+  cloudflare:
+    class: octodns.provider.cloudflare.CloudflareProvider
+    token: env/CLOUDFLARE_TOKEN
+
+zones:
+  fxoi.io.:
+    sources:
+      - config
+    targets:
+      - cloudflare

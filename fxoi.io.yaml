@@ -1,0 +1,7 @@
+"":
+  octodns:
+    cloudflare:
+      proxied: true
+  ttl: 1
+  type: CNAME
+  value: felixoi.com.
