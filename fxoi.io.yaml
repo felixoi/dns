@@ -12,6 +12,7 @@
     value: v=spf1 include:spf.mailcow.de ~all
   - type: TXT
     values:
+      - mailcow
       - v=spf1 include:spf.mailcow.de ~all
 
 _dmarc:
@@ -22,3 +23,27 @@ _dmarc:
     pct=100\;
     rua=mailto:dmarc@fxoi.io\;
     ri=604800\;
+
+_autodiscover._tcp:
+  type: SRV
+  value:
+    priority: 10
+    weight: 10
+    port: 443
+    target: autodiscover.mailcow.de
+
+_autoconfig._tcp:
+  type: SRV
+  value:
+    priority: 10
+    weight: 10
+    port: 443
+    target: autoconfig.mailcow.de
+
+autodiscover:
+  type: CNAME
+  value: autodiscover.mailcow.de
+
+autoconfig:
+  type: CNAME
+  value: autoconfig.mailcow.de
