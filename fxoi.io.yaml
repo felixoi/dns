@@ -1,7 +1,11 @@
 "":
-  octodns:
-    cloudflare:
-      proxied: true
-  ttl: 1
-  type: ALIAS
-  value: felixoi.com.
+  - type: ALIAS
+    octodns:
+     cloudflare:
+       proxied: true
+  - type: MX
+    value:
+      exchange: hosted.mailcow.de.
+      preference: 10
+  - type: SPF
+    value: v=spf1 include:spf.mailcow.de ~all
