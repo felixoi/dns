@@ -8,8 +8,6 @@
     value:
       exchange: hosted.mailcow.de.
       preference: 10
-  - type: SPF
-    value: v=spf1 include:spf.mailcow.de ~all
   - type: TXT
     values:
       - mailcow
@@ -40,16 +38,16 @@ _autoconfig._tcp:
     port: 443
     target: autoconfig.mailcow.de.
 
-#autodiscover:
-#  octodns:
-#    cloudflare:
-#      proxied: true
-#  type: CNAME
-#  value: autodiscover.mailcow.de.
+autodiscover:
+  octodns:
+    cloudflare:
+      proxied: true
+  type: CNAME
+  value: autodiscover.mailcow.de.
 
-#autoconfig:
-#  octodns:
-#    cloudflare:
-#      proxied: true
-#  type: CNAME
-#  value: autoconfig.mailcow.de.
+autoconfig:
+  octodns:
+    cloudflare:
+      proxied: true
+  type: CNAME
+  value: autoconfig.mailcow.de.
