@@ -40,10 +40,16 @@ _autoconfig._tcp:
     port: 443
     target: autoconfig.mailcow.de.
 
-autodiscover:
-  type: CNAME
-  value: autodiscover.mailcow.de.
+#autodiscover:
+#  octodns:
+#    cloudflare:
+#      proxied: true
+#  type: CNAME
+#  value: autodiscover.mailcow.de.
 
-autoconfig:
-  type: CNAME
-  value: autoconfig.mailcow.de.
+#autoconfig:
+#  octodns:
+#    cloudflare:
+#      proxied: true
+#  type: CNAME
+#  value: autoconfig.mailcow.de.
