@@ -12,7 +12,7 @@ providers:
   shared.email:
     class: octodns_namedfileyaml.NamedFileYamlProvider
     directory: ./shared
-    filename: mail.yaml
+    filename: mail
   cloudflare:
     class: octodns_cloudflare.CloudflareProvider
     token: env/CLOUDFLARE_TOKEN
