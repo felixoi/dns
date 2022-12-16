@@ -34,3 +34,10 @@ zones:
       - shared.dummy
     targets:
       - cloudflare
+  felix-kleinekathoefer.com.:
+    sources:
+      - zones
+      - shared.email
+      - shared.dummy
+    targets:
+      - cloudflare
