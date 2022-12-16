@@ -15,6 +15,12 @@ providers:
     filename: mail
     enforce_order: False
     default_ttl: 300
+  shared.dummy:
+    class: octodns_namedfileyaml.NamedFileYamlProvider
+    directory: ./shared
+    filename: dummy
+    enforce_order: False
+    default_ttl: 300
   cloudflare:
     class: octodns_cloudflare.CloudflareProvider
     token: env/CLOUDFLARE_TOKEN
@@ -25,5 +31,6 @@ zones:
     sources:
       - zones
       - shared.email
+      - shared.dummy
     targets:
       - cloudflare

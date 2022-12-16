@@ -1,3 +1,13 @@
+"":
+  - type: MX
+    value:
+      exchange: hosted.mailcow.de.
+      preference: 10
+  - type: TXT
+    values:
+      - mailcow
+      - v=spf1 include:spf.mailcow.de ~all
+
 _dmarc:
   type: TXT
   value: >-

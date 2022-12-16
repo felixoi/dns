@@ -1,0 +1,12 @@
+"":
+  - type: A
+    value: 192.0.2.1
+
+"*":
+  - type: URLFWD
+    value:
+      path: /*
+      target: https://felixoi.com
+      code: 302
+      masking: 2
+      query: 0
