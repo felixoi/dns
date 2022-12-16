@@ -7,7 +7,7 @@ on:
 
 jobs:
   octodns-sync:
-    name: Run `octodns-sync` with production.yaml
+    name: Run `octodns-sync`
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

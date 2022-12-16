@@ -9,7 +9,7 @@ on:
 
 jobs:
   octodns-sync:
-    name: Run `octodns-sync` with production.yaml as dry-run
+    name: Run `octodns-sync` as dry-run
     runs-on: ubuntu-latest
     outputs:
       plan: ${{ steps.generate-plan.outputs.plan }}
