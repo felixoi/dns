@@ -23,7 +23,7 @@ jobs:
       - uses: solvaholic/octodns-sync@v3
         id: generate-plan
         with:
-          config_path: config/production.yaml
+          config_path: octodns.yaml
         env:
           CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
   add-pr-comment:

@@ -4,11 +4,15 @@ manager:
       class: octodns.provider.plan.PlanHtml
 
 providers:
-  config:
+  zones:
     class: octodns.provider.yaml.YamlProvider
-    directory: ./
+    directory: ./zones
     enforce_order: False
     default_ttl: 300
+  shared.email:
+    class: NamedFileYamlProvider
+    directory: ./shared
+    filename: mail.yaml
   cloudflare:
     class: octodns_cloudflare.CloudflareProvider
     token: env/CLOUDFLARE_TOKEN
@@ -17,6 +21,7 @@ providers:
 zones:
   fxoi.io.:
     sources:
-      - config
+      - zones
+      - shared.email
     targets:
       - cloudflare
