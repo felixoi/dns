@@ -22,3 +22,25 @@
 www:
   type: A
   value: 192.0.2.1
+
+_autoconfig._tcp:
+  type: SRV
+  value:
+    priority: 10
+    weight: 10
+    port: 443
+    target: autoconfig.mailcow.de.
+
+autodiscover:
+  octodns:
+    cloudflare:
+      proxied: false
+  type: CNAME
+  value: autodiscover.mailcow.de.
+
+autoconfig:
+  octodns:
+    cloudflare:
+      proxied: false
+  type: CNAME
+  value: autoconfig.mailcow.de.
