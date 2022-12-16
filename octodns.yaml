@@ -10,7 +10,7 @@ providers:
     enforce_order: False
     default_ttl: 300
   shared.email:
-    class: .NamedFileYamlProvider
+    class: .named_yaml_provider.NamedFileYamlProvider
     directory: ./shared
     filename: mail.yaml
   cloudflare:
