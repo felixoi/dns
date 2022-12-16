@@ -13,6 +13,7 @@ providers:
     class: octodns_namedfileyaml.NamedFileYamlProvider
     directory: ./shared
     filename: mail
+    enforce_order: False
   cloudflare:
     class: octodns_cloudflare.CloudflareProvider
     token: env/CLOUDFLARE_TOKEN
