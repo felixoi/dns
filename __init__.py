@@ -1,1 +1,0 @@
-from named_yaml_provider import NamedFileYamlProvider
