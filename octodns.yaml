@@ -14,6 +14,7 @@ providers:
     directory: ./shared
     filename: mail
     enforce_order: False
+    default_ttl: 300
   cloudflare:
     class: octodns_cloudflare.CloudflareProvider
     token: env/CLOUDFLARE_TOKEN
