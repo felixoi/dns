@@ -10,3 +10,7 @@
       code: 302
       masking: 2
       query: 0
+
+www:
+  type: A
+  value: 192.0.2.1
