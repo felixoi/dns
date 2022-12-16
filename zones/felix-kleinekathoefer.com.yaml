@@ -1,6 +1,7 @@
 "":
   - type: TXT
-    value: keybase-site-verification=JM-PaYz-1NpNX2cDmQudcrqt4w2DxZqzNj7NiwltDoQ
+    values:
+      - keybase-site-verification=JM-PaYz-1NpNX2cDmQudcrqt4w2DxZqzNj7NiwltDoQ
 
 default._domainkey:
   type: TXT
