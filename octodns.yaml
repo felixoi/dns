@@ -43,6 +43,6 @@ zones:
   klnkthfr.de.:
     sources:
       - zones
-      - shared.email-mew
+      - shared.email-new
     targets:
       - cloudflare
