@@ -1,0 +1,41 @@
+manager:
+  plan_outputs:
+    html:
+      class: octodns.provider.plan.PlanHtml
+
+providers:
+  zones:
+    class: octodns.provider.yaml.YamlProvider
+    directory: ./zones
+    enforce_order: False
+    default_ttl: 300
+  shared.email:
+    class: octodns_namedfileyaml.NamedFileYamlProvider
+    directory: ./shared
+    filename: mail
+    enforce_order: False
+    default_ttl: 300
+  shared.dummy:
+    class: octodns_namedfileyaml.NamedFileYamlProvider
+    directory: ./shared
+    filename: dummy
+    enforce_order: False
+    default_ttl: 300
+  cloudflare:
+    class: octodns_cloudflare.CloudflareProvider
+    token: env/CLOUDFLARE_TOKEN
+    strict_supports: true
+
+zones:
+  fxoi.io.:
+    sources:
+      - zones
+      - shared.email
+      - shared.dummy
+    targets:
+      - cloudflare
+  klnkthfr.de.:
+    sources:
+      - zones
+    targets:
+      - cloudflare

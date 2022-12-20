@@ -1,0 +1,56 @@
+"":
+  - type: MX
+    value:
+      exchange: mail.klnkthfr.de.
+      preference: 10
+
+mail:
+  - type: A
+    value: 5.75.203.43
+    octodns:
+      cloudflare:
+        proxied: false
+  - type: AAAA
+    value: 2a01:4f8:c0c:c571::1
+    octodns:
+      cloudflare:
+        proxied: false
+
+_dmarc:
+  type: TXT
+  value: >-
+    v=DMARC1\;
+    p=reject\;
+    pct=100\;
+    rua=mailto:dmarc@klnkthfr.de\;
+    ri=604800\;
+
+_autodiscover._tcp:
+  type: SRV
+  value:
+    priority: 10
+    weight: 10
+    port: 443
+    target: mail.klnkthfr.de.
+
+_autoconfig._tcp:
+  type: SRV
+  value:
+    priority: 10
+    weight: 10
+    port: 443
+    target: mail.klnkthfr.de.
+
+autodiscover:
+  octodns:
+    cloudflare:
+      proxied: false
+  type: CNAME
+  value: mail.klnkthfr.de.
+
+autoconfig:
+  octodns:
+    cloudflare:
+      proxied: false
+  type: CNAME
+  value: mail.klnkthfr.de.

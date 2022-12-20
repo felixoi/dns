@@ -1,6 +1,4 @@
 "":
-  - type: A
-    value: 192.0.2.1
   - type: MX
     value:
       exchange: hosted.mailcow.de.
@@ -9,19 +7,6 @@
     values:
       - mailcow
       - v=spf1 include:spf.mailcow.de ~all
-
-"*":
-  - type: URLFWD
-    value:
-      path: /*
-      target: https://felixoi.com
-      code: 302
-      masking: 2
-      query: 0
-
-www:
-  type: A
-  value: 192.0.2.1
 
 _dmarc:
   type: TXT

@@ -1,0 +1,9 @@
+default._domainkey:
+  type: TXT
+  value: >-
+    v=DKIM1\;
+    h=sha256\;
+    k=rsa\;
+    t=s\;
+    s=email\;
+    p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1AGuSvphxfwLEAB29qMVDjkyWQlVawFQdnK5ReCjjRjSZeTrJwr/LNVImCCue95u7cf/8JqTVXZ7fp3QctzhELhLKLBXHvQS2gcuveTdZ2d/Sru8Wg3SjCUeS7wIBZCgQ/rfCWQOBczVxDr7AKpVWym+FD2UpTtY1xEemIpFU8aucZ2CwnZkg9QQ1yJvQYq56pmI/i/f9vclIiv0qjAzXLQUH/4ULVwwMQO/3vxLMltB6QfoxUqD7YONQkU3GHNPGhYuY/eX3isZ1zCWZsOcc2JMhXywjjAPmJMReviXh1vaictp4qaefOPZ7ZTOBxcGC6W0FlILyyRl/QU0gNrtMwIDAQAB
