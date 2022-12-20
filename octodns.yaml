@@ -15,6 +15,12 @@ providers:
     filename: mail
     enforce_order: False
     default_ttl: 300
+  shared.email-new:
+    class: octodns_namedfileyaml.NamedFileYamlProvider
+    directory: ./shared
+    filename: mail-new
+    enforce_order: False
+    default_ttl: 300
   shared.dummy:
     class: octodns_namedfileyaml.NamedFileYamlProvider
     directory: ./shared
@@ -37,5 +43,6 @@ zones:
   klnkthfr.de.:
     sources:
       - zones
+      - shared.email-new
     targets:
       - cloudflare
