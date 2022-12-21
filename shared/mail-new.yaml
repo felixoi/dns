@@ -14,7 +14,7 @@ _dmarc:
     v=DMARC1\;
     p=reject\;
     pct=100\;
-    rua=mailto:dmarc@klnkthfr.de\;
+    rua=mailto:monitoring@klnkthfr.de\;
     ri=604800\;
 
 _autodiscover._tcp:

@@ -9,3 +9,19 @@ mail:
     octodns:
       cloudflare:
         proxied: false
+
+mta-sts:
+  - type: CNAME
+    value: mail.klnkthfr.de.
+
+_smtp._tls:
+  - type: TXT
+    value: >-
+      v=TLSRPTv1\;
+      rua=mailto:monitoring@klnkthfr.de
+
+_mta-sts:
+  - type: TXT
+    value: >-
+      v=STSv1\;
+      id=20221221100000Z
