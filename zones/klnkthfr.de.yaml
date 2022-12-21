@@ -13,6 +13,9 @@ mail:
 mta-sts:
   - type: CNAME
     value: mail.klnkthfr.de.
+    octodns:
+      cloudflare:
+        proxied: false
 
 _smtp._tls:
   - type: TXT
