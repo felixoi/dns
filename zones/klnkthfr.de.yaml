@@ -37,3 +37,11 @@ dkim._domainkey:
     t=s\;
     s=email\;
     p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxxuwFNl3B0sfvzlMVNDB+YWAGDmUcSyEjgCeDXRl1XUY0WnpQOV9Y9KWYzRdWpW0/MtnRepd1kCfpqJLUFFmi6iMMs8+Sd9P9rkBjhH/yeu412LsKndLLZuoSQJila15QNCBO60E1T85emVu7g30LE86P4Bre20B46GO1naatfb5ZknX9y6TE4mRxfD4as+86TwJ/G7OfP4pxdNJvpuAHHI8Gywzn0Cs37L8jUicA7UVgllgApfrEqMZ0xkZ2UNvKEpxAJ/xu5eMAObSJ6l91NjHOT7VRcaDOOBZgsjBywpIMhIbPWqWIkDzXbOHbje9C0wm2IaWNnqssH9AikGiUwIDAQAB
+
+_25._tcp.mail:
+  type: TLSA
+  value:
+    certificate_usage: 3
+    selector: 1
+    matching_type: 1
+    certificate_association_data: b51b4fc0f0369da102dedf41eb2f72c00c0752c1593f13ae2c26ba5a6eddea17
