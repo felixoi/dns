@@ -44,4 +44,10 @@ _25._tcp.mail:
     certificate_usage: 3
     selector: 1
     matching_type: 1
-    certificate_association_data: b51b4fc0f0369da102dedf41eb2f72c00c0752c1593f13ae2c26ba5a6eddea17
+    certificate_association_data: c67d9959e5647c0848909b195ccce596343e2e6eea76258082c012732da6c0cc
+
+_dmarc.mail:
+  type: TXT
+  value: >-
+    v=DMARC1\;
+    p=none\;
