@@ -1,3 +1,3 @@
 -e git+https://git@github.com/octodns/octodns.git@af23c00b266c959f4001cd809b04511128a5602b#egg=octodns
-octodns-cloudflare==0.0.1
+-e git+https://git@github.com/octodns/octodns-cloudflare.git@4bfd1eb261f3aa4a98708b666b3333e30597fa23#egg=octodns-cloudflare
 octodns_namedfileyaml==0.0.2
