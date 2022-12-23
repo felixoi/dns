@@ -17,32 +17,58 @@ _dmarc:
     rua=mailto:monitoring@klnkthfr.de\;
     ri=604800\;
 
-_autodiscover._tcp:
-  type: SRV
-  value:
-    priority: 10
-    weight: 10
-    port: 443
-    target: mail.klnkthfr.de.
-
-_autoconfig._tcp:
-  type: SRV
-  value:
-    priority: 10
-    weight: 10
-    port: 443
-    target: mail.klnkthfr.de.
-
-autodiscover:
+autodiscover: &mailcname
   octodns:
     cloudflare:
       proxied: false
   type: CNAME
   value: mail.klnkthfr.de.
 
-autoconfig:
-  octodns:
-    cloudflare:
-      proxied: false
-  type: CNAME
-  value: mail.klnkthfr.de.
+autoconfig: *mailcname
+
+_autodiscover._tcp: &mailsrv
+  type: SRV
+  value: &mailsrvvalue
+    priority: 0
+    weight: 1
+    port: 443
+    target: mail.klnkthfr.de.
+
+_autoconfig._tcp: *mailsrv
+
+_caldavs._tcp: &mailcalcard
+  - *mailsrv
+  - type: TXT
+    value: path=/SOGo/dav/
+
+_carddavs._tcp: *mailcalcard
+
+_imap._tcp:
+  <<: *mailsrv
+  value:
+    <<: *mailsrvvalue
+    port: 143
+
+_imaps._tcp:
+  <<: *mailsrv
+  value:
+    <<: *mailsrvvalue
+    port: 993
+
+_sieve._tcp:
+  <<: *mailsrv
+  value:
+    <<: *mailsrvvalue
+    port: 4190
+
+_smtps._tcp:
+  <<: *mailsrv
+  value:
+    <<: *mailsrvvalue
+    port: 465
+
+_submission._tcp:
+  <<: *mailsrv
+  value:
+    <<: *mailsrvvalue
+    port: 587
