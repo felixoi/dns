@@ -29,7 +29,7 @@ _mta-sts:
       v=STSv1\;
       id=20221221100000Z
 
-dkim_domainkey:
+dkim._domainkey:
   type: TXT
   value: >-
     v=DKIM1\;
