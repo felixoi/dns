@@ -9,6 +9,8 @@ mail:
     octodns:
       cloudflare:
         proxied: false
+  - type: TXT
+    value: "v=spf1 redirect=klnkthfr.de"
 
 mta-sts:
   - type: CNAME
