@@ -1,0 +1,17 @@
+# Domain-specific mail records
+dkim._domainkey:
+  type: TXT
+  value: >-
+    v=DKIM1\;
+    k=rsa\;
+    t=s\;
+    s=email\;
+    p=REPLACE
+
+_25._tcp.mail:
+  type: TLSA
+  value:
+    certificate_usage: 3
+    selector: 1
+    matching_type: 1
+    certificate_association_data: REPLACE

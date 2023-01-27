@@ -1,3 +1,4 @@
+# Mailserver records
 mail:
   - type: A
     value: 5.75.203.43
@@ -9,28 +10,20 @@ mail:
     octodns:
       cloudflare:
         proxied: false
+# Remove when https://github.com/mailcow/mailcow-dockerized/pull/4968 is released
+# and Watchdog has been moved to webhooks
+# ---------
   - type: TXT
     value: "v=spf1 redirect=klnkthfr.de"
 
-mta-sts:
-  - type: CNAME
-    value: mail.klnkthfr.de.
-    octodns:
-      cloudflare:
-        proxied: false
+_dmarc.mail:
+  type: TXT
+  value: >-
+    v=DMARC1\;
+    p=none\;
+# ---------
 
-_smtp._tls:
-  - type: TXT
-    value: >-
-      v=TLSRPTv1\;
-      rua=mailto:monitoring@klnkthfr.de
-
-_mta-sts:
-  - type: TXT
-    value: >-
-      v=STSv1\;
-      id=20221221100000Z
-
+# Domain-specific mail records
 dkim._domainkey:
   type: TXT
   value: >-
@@ -47,9 +40,3 @@ _25._tcp.mail:
     selector: 1
     matching_type: 1
     certificate_association_data: c67d9959e5647c0848909b195ccce596343e2e6eea76258082c012732da6c0cc
-
-_dmarc.mail:
-  type: TXT
-  value: >-
-    v=DMARC1\;
-    p=none\;
