@@ -1,5 +1,7 @@
 # TXT-records cannot be shared currently https://github.com/octodns/octodns/issues/962#issuecomment-1354585570
 "":
+  - type: CNAME
+    value: felixoi-com.pages.dev
   - type: TXT
     values:
       - "v=spf1 ip4:5.75.203.43 ip6:2a01:4f8:c0c:c571::1 -all"
@@ -14,3 +16,7 @@ dkim._domainkey:
     t=s\;
     s=email\;
     p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAo0NFz7gCb0PGf3PakRiSTOphZAlfRjtPsjEUHyqt0GhvCkdyikL3UA7IPErNWCfMiMy/3vWXoK/BFqpthwZ/DMHUsYvWU7kWjhpZGE85Hgf0nyBr5lO2EQjDN+15sOEb557ylc/QdDS4dGzoWjZASJVH19/Ey/PPAD6aiGJNtlhBocBtxTjZJekE6ir22/dPiiJZJI8VCwaf+b/PgZWYHJyV4W6yVlYY+9C70huiBgfrER5aw9QsQfmSr2jje7XM96st6HqOWbz41mSrt1ZFx2y4kI8zHrabcNRghFQ0qdhB13WiD4KU/gXymNX4BBuDsiyni7CrFXuldMc9bHGW/wIDAQAB
+
+www:
+  type: CNAME
+  value: felixoi-com.pages.dev
