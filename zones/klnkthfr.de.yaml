@@ -1,3 +1,10 @@
+# TXT-records cannot be shared currently https://github.com/octodns/octodns/issues/962#issuecomment-1354585570
+"":
+  - type: TXT
+    values:
+      - "v=spf1 ip4:5.75.203.43 ip6:2a01:4f8:c0c:c571::1 -all"
+
+# Mailserver records
 mail:
   - type: A
     value: 5.75.203.43
@@ -9,36 +16,17 @@ mail:
     octodns:
       cloudflare:
         proxied: false
+# Remove when https://github.com/mailcow/mailcow-dockerized/pull/4968 is released
+# and Watchdog has been moved to webhooks
+# ---------
   - type: TXT
     value: "v=spf1 redirect=klnkthfr.de"
 
-mta-sts:
-  - type: CNAME
-    value: mail.klnkthfr.de.
-    octodns:
-      cloudflare:
-        proxied: false
-
-_smtp._tls:
-  - type: TXT
-    value: >-
-      v=TLSRPTv1\;
-      rua=mailto:monitoring@klnkthfr.de
-
-_mta-sts:
-  - type: TXT
-    value: >-
-      v=STSv1\;
-      id=20221221100000Z
-
-dkim._domainkey:
+_dmarc.mail:
   type: TXT
   value: >-
-    v=DKIM1\;
-    k=rsa\;
-    t=s\;
-    s=email\;
-    p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxxuwFNl3B0sfvzlMVNDB+YWAGDmUcSyEjgCeDXRl1XUY0WnpQOV9Y9KWYzRdWpW0/MtnRepd1kCfpqJLUFFmi6iMMs8+Sd9P9rkBjhH/yeu412LsKndLLZuoSQJila15QNCBO60E1T85emVu7g30LE86P4Bre20B46GO1naatfb5ZknX9y6TE4mRxfD4as+86TwJ/G7OfP4pxdNJvpuAHHI8Gywzn0Cs37L8jUicA7UVgllgApfrEqMZ0xkZ2UNvKEpxAJ/xu5eMAObSJ6l91NjHOT7VRcaDOOBZgsjBywpIMhIbPWqWIkDzXbOHbje9C0wm2IaWNnqssH9AikGiUwIDAQAB
+    v=DMARC1\;
+    p=none\;
 
 _25._tcp.mail:
   type: TLSA
@@ -47,9 +35,14 @@ _25._tcp.mail:
     selector: 1
     matching_type: 1
     certificate_association_data: c67d9959e5647c0848909b195ccce596343e2e6eea76258082c012732da6c0cc
+# ---------
 
-_dmarc.mail:
+# Domain-specific mail records
+dkim._domainkey:
   type: TXT
   value: >-
-    v=DMARC1\;
-    p=none\;
+    v=DKIM1\;
+    k=rsa\;
+    t=s\;
+    s=email\;
+    p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxxuwFNl3B0sfvzlMVNDB+YWAGDmUcSyEjgCeDXRl1XUY0WnpQOV9Y9KWYzRdWpW0/MtnRepd1kCfpqJLUFFmi6iMMs8+Sd9P9rkBjhH/yeu412LsKndLLZuoSQJila15QNCBO60E1T85emVu7g30LE86P4Bre20B46GO1naatfb5ZknX9y6TE4mRxfD4as+86TwJ/G7OfP4pxdNJvpuAHHI8Gywzn0Cs37L8jUicA7UVgllgApfrEqMZ0xkZ2UNvKEpxAJ/xu5eMAObSJ6l91NjHOT7VRcaDOOBZgsjBywpIMhIbPWqWIkDzXbOHbje9C0wm2IaWNnqssH9AikGiUwIDAQAB

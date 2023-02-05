@@ -1,9 +1,23 @@
-default._domainkey:
+# TXT-records cannot be shared currently https://github.com/octodns/octodns/issues/962#issuecomment-1354585570
+"":
+  - type: TXT
+    values:
+      - "v=spf1 ip4:5.75.203.43 ip6:2a01:4f8:c0c:c571::1 -all"
+
+# Domain-specific mail records
+dkim._domainkey:
   type: TXT
   value: >-
     v=DKIM1\;
-    h=sha256\;
     k=rsa\;
     t=s\;
     s=email\;
-    p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1AGuSvphxfwLEAB29qMVDjkyWQlVawFQdnK5ReCjjRjSZeTrJwr/LNVImCCue95u7cf/8JqTVXZ7fp3QctzhELhLKLBXHvQS2gcuveTdZ2d/Sru8Wg3SjCUeS7wIBZCgQ/rfCWQOBczVxDr7AKpVWym+FD2UpTtY1xEemIpFU8aucZ2CwnZkg9QQ1yJvQYq56pmI/i/f9vclIiv0qjAzXLQUH/4ULVwwMQO/3vxLMltB6QfoxUqD7YONQkU3GHNPGhYuY/eX3isZ1zCWZsOcc2JMhXywjjAPmJMReviXh1vaictp4qaefOPZ7ZTOBxcGC6W0FlILyyRl/QU0gNrtMwIDAQAB
+    p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5sgcdQky3oeF51IHmHBMef5pOaCQqXK90aKkWsHBg2Df2YaHDSqaRTDqcie52qTIODQkeQnZ9NPCRQXW+Wgslcu2eukzxN3ipPawGGjHdajE9mXL10mdwd1X7LWCrHIBwrimSbLJ8CLTojOfsVIwQ64iW9YXRZdUk7a6ktcgNaxmT8awFGZUvlMT4FEzQrH5kN5fh67LMlTeOP+BRDwc/m3VOhoUIFoBW88MDJcVd7WIaFZnQNlQ04erX8zJqYAC27MOb4C4OTAajXWCTPCAd5W51rLrUt8t9+Vg4gt4NOs8bQCttVAlE/K0JZQUkvldhpUu6FHTyXLomVRMZuvrZQIDAQAB
+
+discord-command-imgur:
+  type: A
+  value: 192.0.2.1
+
+discord-command-bookmark:
+  type: A
+  value: 192.0.2.1

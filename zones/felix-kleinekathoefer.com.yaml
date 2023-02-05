@@ -1,0 +1,16 @@
+# TXT-records cannot be shared currently https://github.com/octodns/octodns/issues/962#issuecomment-1354585570
+"":
+  - type: TXT
+    values:
+      - "v=spf1 ip4:5.75.203.43 ip6:2a01:4f8:c0c:c571::1 -all"
+      - "keybase-site-verification=JM-PaYz-1NpNX2cDmQudcrqt4w2DxZqzNj7NiwltDoQ"
+
+# Domain-specific mail records
+dkim._domainkey:
+  type: TXT
+  value: >-
+    v=DKIM1\;
+    k=rsa\;
+    t=s\;
+    s=email\;
+    p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAupMFRnJTA5sxOL27N1rVcnBuwCiVtLT3njYE50m22zXtt6jEwCrGDnpCdmym9E/JekjvtqB5rIgLMC7z8bZoYktW2D6TWBhFFmCG22/YJDu+HMoBRi1fmTI2ZN8yL0jg6CTMdg/A87mZgiIU7Nygyu2zmRcszjvp/J3DdgioernFY6WqXHA7/lmzXKGtTfoNlS7/Xw0KutNfY2EjF4vQ3eEX/thylGNM8sZmLVpnJzoUagwBN+2ml175GKuuKkWc7T5wztgSWxOhHxGaNXapu2/i8SQSncreY5cHYuNRhwVxbvhD5IdcuOZY6UKsfz9e7pEg5om2/uc6zWj7mPvk1wIDAQAB

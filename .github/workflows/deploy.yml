@@ -16,9 +16,10 @@ jobs:
           python-version: '3'
       - name: Install requirements
         run: pip install -r requirements.txt
-      - uses: solvaholic/octodns-sync@main
+      - uses: felixoi/octodns-sync@main
         with:
           config_path: octodns.yaml
           doit: '--doit'
+          force: 'Yes'
         env:
           CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
