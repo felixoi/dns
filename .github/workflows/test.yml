@@ -20,7 +20,7 @@ jobs:
           python-version: '3'
       - name: Install requirements
         run: pip install -r requirements.txt
-      - uses: felixoi/octodns-sync@9833aa80b95958cdaca9f9726b073b7f35fc00ca
+      - uses: felixoi/octodns-sync@main
         id: generate-plan
         with:
           config_path: octodns.yaml
