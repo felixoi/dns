@@ -1,6 +1,9 @@
 "":
   - type: A
     value: 192.0.2.1
+    octodns:
+      cloudflare:
+        proxied: true
 
 "*":
   - type: URLFWD
@@ -14,3 +17,6 @@
 www:
   type: A
   value: 192.0.2.1
+  octodns:
+    cloudflare:
+      proxied: true
