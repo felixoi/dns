@@ -20,10 +20,11 @@ jobs:
           python-version: '3'
       - name: Install requirements
         run: pip install -r requirements.txt
-      - uses: solvaholic/octodns-sync@v3
+      - uses: felixoi/octodns-sync@9833aa80b95958cdaca9f9726b073b7f35fc00ca
         id: generate-plan
         with:
           config_path: octodns.yaml
+          force: 'Yes'
         env:
           CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
   add-pr-comment:
