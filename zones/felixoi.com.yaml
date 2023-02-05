@@ -1,6 +1,6 @@
 # TXT-records cannot be shared currently https://github.com/octodns/octodns/issues/962#issuecomment-1354585570
 "":
-  - type: CNAME
+  - type: ALIAS
     value: felixoi-com.pages.dev
   - type: TXT
     values:
@@ -19,4 +19,4 @@ dkim._domainkey:
 
 www:
   type: CNAME
-  value: felixoi-com.pages.dev
+  value: felixoi-com.pages.dev.
