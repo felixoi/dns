@@ -28,19 +28,19 @@ providers:
 
 zones:
 # --------- Personal --------- #
-  kleinekathoefer.online:
+  kleinekathoefer.online.:
     sources:
       - zones
       - shared.email
     targets:
       - cloudflare
-  felix-kleinekathoefer.com:
+  felix-kleinekathoefer.com.:
     sources:
       - zones
       - shared.email
     targets:
       - cloudflare
-  felix-kleinekathoefer.de:
+  felix-kleinekathoefer.de.:
     sources:
       - zones
       - shared.email
@@ -48,7 +48,7 @@ zones:
       - cloudflare
 
 # ---------- Online ---------- #
-  felixoi.com:
+  felixoi.com.:
     sources:
       - zones
       - shared.email
