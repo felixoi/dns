@@ -1,7 +1,7 @@
 # TXT-records cannot be shared currently https://github.com/octodns/octodns/issues/962#issuecomment-1354585570
 "":
   - type: ALIAS
-    value: felixoi-com.pages.dev
+    value: felixoi-com.pages.dev.
   - type: TXT
     values:
       - "v=spf1 ip4:5.75.203.43 ip6:2a01:4f8:c0c:c571::1 -all"
