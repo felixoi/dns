@@ -17,7 +17,13 @@ dkim._domainkey:
 discord-command-imgur:
   type: A
   value: 192.0.2.1
+  octodns:
+    cloudflare:
+      proxied: true
 
 discord-command-bookmark:
   type: A
   value: 192.0.2.1
+  octodns:
+    cloudflare:
+      proxied: true
