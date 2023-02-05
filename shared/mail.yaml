@@ -3,9 +3,6 @@
     value:
       exchange: mail.klnkthfr.de.
       preference: 10
-  - type: TXT
-    values:
-      - "v=spf1 ip4:5.75.203.43 ip6:2a01:4f8:c0c:c571::1 -all"
 
 _dmarc:
   type: TXT

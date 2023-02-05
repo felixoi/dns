@@ -1,3 +1,9 @@
+# TXT-records cannot be shared currently https://github.com/octodns/octodns/issues/962#issuecomment-1354585570
+"":
+  - type: TXT
+    values:
+      - "v=spf1 ip4:5.75.203.43 ip6:2a01:4f8:c0c:c571::1 -all"
+
 # Domain-specific mail records
 dkim._domainkey:
   type: TXT
