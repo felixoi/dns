@@ -1,0 +1,9 @@
+# Domain-specific mail records
+dkim._domainkey:
+  type: TXT
+  value: >-
+    v=DKIM1\;
+    k=rsa\;
+    t=s\;
+    s=email\;
+    p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxpV5Kk1+qTFyrzLYLSF/HlqODdVMvwn2V9s/M2hr7g4x+ra52Hg3cYdDmHPhfVbu6Wq962LgHKHAa5c4fm8j8xrHxByw/uGK3C3mGxPHCCrS76HFnE8A0Q5vxiyh8Nw+Cw1sTRAwRZ9uoNlI0IJ3+NujD1dujHTYTyQJU3qp+i+VTCttK/9tTAdc700930YSji2TZv2rteW66n3QUuLwoE+D9F39dh5MWTZsqOyOaUrATwnWKv25+dD9TpAPnvWo5BD3CHycTTMP7/q6C+DO8d7puWr1JadzR/PdmhsBy+jFX8hNq1XfZf1/3eYEAjayxK8sK9NFm7/eSe+za1R5mwIDAQAB

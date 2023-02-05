@@ -1,12 +1,11 @@
 "":
   - type: MX
     value:
-      exchange: hosted.mailcow.de.
+      exchange: mail.klnkthfr.de.
       preference: 10
   - type: TXT
     values:
-      - mailcow
-      - v=spf1 include:spf.mailcow.de ~all
+      - "v=spf1 ip4:5.75.203.43 ip6:2a01:4f8:c0c:c571::1 -all"
 
 _dmarc:
   type: TXT
@@ -14,35 +13,81 @@ _dmarc:
     v=DMARC1\;
     p=reject\;
     pct=100\;
-    rua=mailto:dmarc@fxoi.io\;
+    rua=mailto:monitoring@klnkthfr.de\;
     ri=604800\;
 
-_autodiscover._tcp:
-  type: SRV
-  value:
-    priority: 10
-    weight: 10
-    port: 443
-    target: autodiscover.mailcow.de.
-
-_autoconfig._tcp:
-  type: SRV
-  value:
-    priority: 10
-    weight: 10
-    port: 443
-    target: autoconfig.mailcow.de.
-
-autodiscover:
+autodiscover: &mailcname
   octodns:
     cloudflare:
       proxied: false
   type: CNAME
-  value: autodiscover.mailcow.de.
+  value: mail.klnkthfr.de.
 
-autoconfig:
-  octodns:
-    cloudflare:
-      proxied: false
-  type: CNAME
-  value: autoconfig.mailcow.de.
+autoconfig: *mailcname
+
+_autodiscover._tcp: &mailsrv
+  type: SRV
+  value: &mailsrvvalue
+    priority: 0
+    weight: 1
+    port: 443
+    target: mail.klnkthfr.de.
+
+_autoconfig._tcp: *mailsrv
+
+_caldavs._tcp: &mailcalcard
+  - *mailsrv
+  - type: TXT
+    value: path=/SOGo/dav/
+
+_carddavs._tcp: *mailcalcard
+
+_imap._tcp:
+  <<: *mailsrv
+  value:
+    <<: *mailsrvvalue
+    port: 143
+
+_imaps._tcp:
+  <<: *mailsrv
+  value:
+    <<: *mailsrvvalue
+    port: 993
+
+_sieve._tcp:
+  <<: *mailsrv
+  value:
+    <<: *mailsrvvalue
+    port: 4190
+
+_smtps._tcp:
+  <<: *mailsrv
+  value:
+    <<: *mailsrvvalue
+    port: 465
+
+_submission._tcp:
+  <<: *mailsrv
+  value:
+    <<: *mailsrvvalue
+    port: 587
+
+# MTA-STS
+mta-sts:
+  - type: CNAME
+    value: mail.klnkthfr.de.
+    octodns:
+      cloudflare:
+        proxied: false
+
+_smtp._tls:
+  - type: TXT
+    value: >-
+      v=TLSRPTv1\;
+      rua=mailto:monitoring@klnkthfr.de
+
+_mta-sts:
+  - type: TXT
+    value: >-
+      v=STSv1\;
+      id=20221221100000Z

@@ -15,12 +15,6 @@ providers:
     filename: mail
     enforce_order: False
     default_ttl: 300
-  shared.email-new:
-    class: octodns_namedfileyaml.NamedFileYamlProvider
-    directory: ./shared
-    filename: mail-new
-    enforce_order: False
-    default_ttl: 300
   shared.dummy:
     class: octodns_namedfileyaml.NamedFileYamlProvider
     directory: ./shared
@@ -33,6 +27,41 @@ providers:
     strict_supports: true
 
 zones:
+# --------- Personal --------- #
+  kleinekathoefer.online:
+    sources:
+      - zones
+      - shared.email
+    targets:
+      - cloudflare
+  felix-kleinekathoefer.com:
+    sources:
+      - zones
+      - shared.email
+    targets:
+      - cloudflare
+  felix-kleinekathoefer.de:
+    sources:
+      - zones
+      - shared.email
+    targets:
+      - cloudflare
+
+# ---------- Online ---------- #
+  felixoi.com:
+    sources:
+      - zones
+      - shared.email
+    targets:
+      - cloudflare
+
+# --------- Technical -------- #
+  klnkthfr.de.:
+    sources:
+      - zones
+      - shared.email
+    targets:
+      - cloudflare
   fxoi.io.:
     sources:
       - zones
@@ -40,13 +69,3 @@ zones:
       - shared.dummy
     targets:
       - cloudflare
-  klnkthfr.de.:
-    sources:
-      - zones
-      - shared.email-new
-    targets:
-      - cloudflare
-#  felix-kleinekathoefer.com:
-#    sources:
-#      - zones
-#      - shared.email-new
