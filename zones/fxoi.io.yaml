@@ -14,6 +14,7 @@ dkim._domainkey:
     s=email\;
     p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5sgcdQky3oeF51IHmHBMef5pOaCQqXK90aKkWsHBg2Df2YaHDSqaRTDqcie52qTIODQkeQnZ9NPCRQXW+Wgslcu2eukzxN3ipPawGGjHdajE9mXL10mdwd1X7LWCrHIBwrimSbLJ8CLTojOfsVIwQ64iW9YXRZdUk7a6ktcgNaxmT8awFGZUvlMT4FEzQrH5kN5fh67LMlTeOP+BRDwc/m3VOhoUIFoBW88MDJcVd7WIaFZnQNlQ04erX8zJqYAC27MOb4C4OTAajXWCTPCAd5W51rLrUt8t9+Vg4gt4NOs8bQCttVAlE/K0JZQUkvldhpUu6FHTyXLomVRMZuvrZQIDAQAB
 
+# Discord slash commands
 discord-command-imgur:
   type: A
   value: 192.0.2.1
