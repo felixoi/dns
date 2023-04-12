@@ -14,3 +14,12 @@ dkim._domainkey:
     t=s\;
     s=email\;
     p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxpV5Kk1+qTFyrzLYLSF/HlqODdVMvwn2V9s/M2hr7g4x+ra52Hg3cYdDmHPhfVbu6Wq962LgHKHAa5c4fm8j8xrHxByw/uGK3C3mGxPHCCrS76HFnE8A0Q5vxiyh8Nw+Cw1sTRAwRZ9uoNlI0IJ3+NujD1dujHTYTyQJU3qp+i+VTCttK/9tTAdc700930YSji2TZv2rteW66n3QUuLwoE+D9F39dh5MWTZsqOyOaUrATwnWKv25+dD9TpAPnvWo5BD3CHycTTMP7/q6C+DO8d7puWr1JadzR/PdmhsBy+jFX8hNq1XfZf1/3eYEAjayxK8sK9NFm7/eSe+za1R5mwIDAQAB
+
+_dmarc:
+  type: TXT
+  value: >-
+    v=DMARC1\;
+    p=reject\;
+    pct=100\;
+    rua=mailto:bbb09a2afc764a9db6014c08d0e34c47@dmarc-reports.cloudflare.net\;
+    ri=86400\;

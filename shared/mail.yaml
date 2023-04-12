@@ -4,15 +4,6 @@
       exchange: mail.klnkthfr.de.
       preference: 10
 
-_dmarc:
-  type: TXT
-  value: >-
-    v=DMARC1\;
-    p=reject\;
-    pct=100\;
-    rua=mailto:monitoring@klnkthfr.de\;
-    ri=604800\;
-
 autodiscover: &mailcname
   octodns:
     cloudflare:

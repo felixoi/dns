@@ -26,3 +26,12 @@ www:
   octodns:
     cloudflare:
       proxied: true
+
+_dmarc:
+  type: TXT
+  value: >-
+    v=DMARC1\;
+    p=reject\;
+    pct=100\;
+    rua=mailto:1cc84cd77d4d4d4f967f993a23ba2b3d@dmarc-reports.cloudflare.net\;
+    ri=86400\;
