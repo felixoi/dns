@@ -4,6 +4,7 @@
     values:
       - "v=spf1 ip4:5.75.203.43 ip6:2a01:4f8:c0c:c571::1 -all"
       - "keybase-site-verification=0uXfmUwRC1tU8WI8-6Jwd-QAwY3reyK0-JLrFEYC9E0"
+      - "google-site-verification=aZ0Ip67u-DzCElWtmIZKLiHSh-GRmYTyUn9AAypPvNs"
 
 # Domain-specific mail records
 dkim._domainkey:
